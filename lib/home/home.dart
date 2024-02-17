@@ -6,7 +6,7 @@ import '../api/model_json.dart';
 import '../movies/movie_card.dart';
 import '../movies/movie_details.dart';
 import '../movies/special_movie.dart';
-import '../top_bar.dart';
+import 'top_bar/top_bar.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

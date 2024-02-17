@@ -16,8 +16,16 @@ class MovieService {
     }
   }
 
-  // Future<List<ApiDataModel>> get(String catagory) async {
-  //   final url= Uri.parse("");
-  //   http.post(url);
-  // }
+  Future<List<ApiDataModel>> searchMovies(String query) async {
+    final url = Uri.parse(
+        '${ApiConfig.baseUrl}${ApiConfig.searchMovies}${ApiConfig.apiKey}&query=$query');
+    final response = await http.get(url);
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      final List<dynamic> results = data['results'];
+      return results.map((json) => ApiDataModel.fromJson(json)).toList();
+    } else {
+      throw Exception('Could Not Fetch Movies');
+    }
+  }
 }

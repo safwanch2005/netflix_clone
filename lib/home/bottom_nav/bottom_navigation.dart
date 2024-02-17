@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_clone/search_screeen.dart';
-import 'home/home.dart';
-import 'movies/to_watch.dart';
+import 'package:netflix_clone/search_page/search_screeen.dart';
+import '../home.dart';
+import '../../movies/to_watch.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -17,7 +17,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        selectedFontSize: 10,
+        selectedFontSize: 11,
         unselectedFontSize: 10,
         onTap: (int index) {
           if (index == 4) {

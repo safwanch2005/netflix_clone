@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_clone/bottom_navigation.dart';
+import 'package:netflix_clone/home/bottom_nav/bottom_navigation.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -9,19 +9,19 @@ class SplashScreen extends StatelessWidget {
     Future.delayed(const Duration(seconds: 1), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => const BottomNavigation(), 
+          builder: (context) => const BottomNavigation(),
         ),
       );
     });
 
     return Scaffold(
-  body: Center(
-    child: Image.asset(
-      "images/netfologo.png",
-      width: 200,
-      height: 200,
-    ),
-  ),
-);
+      body: Center(
+        child: Image.asset(
+          "images/netfologo.png",
+          width: 200,
+          height: 200,
+        ),
+      ),
+    );
   }
 }
