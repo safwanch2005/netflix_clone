@@ -17,12 +17,14 @@ class MovieDetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(
-              '${ApiConfig.imagePath}${movie.poster ?? ''}',
-              // height: 300,
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fill,
-            ),
+            movie.poster == null
+                ? Container()
+                : Image.network(
+                    '${ApiConfig.imagePath}${movie.poster ?? ''}',
+                    height: 300,
+                    width: MediaQuery.of(context).size.width,
+                    fit: BoxFit.fill,
+                  ),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
